@@ -33,4 +33,8 @@ public class Task {
     public void setDueDate(Date dueDate) {
         mDueDate = dueDate;
     }
+
+    public String toString(){
+        return mName;
+    }
 }
