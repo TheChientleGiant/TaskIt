@@ -27,7 +27,13 @@ public class TaskListActivity extends AppCompatActivity {
         items[2].setName("Task 3");
 
         ListView listView = (ListView)findViewById(R.id.task_list);
-        listView.setAdapter(new ArrayAdapter<Task>(this, android.R.layout.simple_list_item_1, items));
+        listView.setAdapter(new TaskAdapter(items));
+    }
+
+    private class TaskAdapter extends ArrayAdapter<Task>{
+        TaskAdapter(Task[] tasks){
+            super(TaskListActivity.this, android.R.layout.simple_list_item_1, tasks);
+        }
     }
 
     @Override
