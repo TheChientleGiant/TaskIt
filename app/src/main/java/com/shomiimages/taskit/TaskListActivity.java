@@ -8,6 +8,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -33,6 +34,13 @@ public class TaskListActivity extends AppCompatActivity {
     private class TaskAdapter extends ArrayAdapter<Task>{
         TaskAdapter(Task[] tasks){
             super(TaskListActivity.this, android.R.layout.simple_list_item_1, tasks);
+        }
+
+        @Override
+        public View getView(int position, View convertView, ViewGroup parent) {
+            convertView = super.getView(position, convertView, parent);
+
+            return convertView;
         }
     }
 
