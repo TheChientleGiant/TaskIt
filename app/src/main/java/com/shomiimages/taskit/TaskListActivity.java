@@ -40,8 +40,9 @@ public class TaskListActivity extends AppCompatActivity {
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
             convertView = super.getView(position, convertView, parent);
+            Task task = getItem(position);
             TextView taskName = (TextView)convertView.findViewById(R.id.task_item_name);
-            taskName.setText("Hello World!");
+            taskName.setText(task.getName());
 
             return convertView;
         }
