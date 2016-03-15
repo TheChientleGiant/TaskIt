@@ -10,6 +10,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.CheckBox;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -25,6 +26,7 @@ public class TaskListActivity extends AppCompatActivity {
         items[0].setName("Task 1");
         items[1] = new Task();
         items[1].setName("Task 2");
+        items[1].setDone(true);
         items[2] = new Task();
         items[2].setName("Task 3");
 
@@ -43,6 +45,9 @@ public class TaskListActivity extends AppCompatActivity {
             Task task = getItem(position);
             TextView taskName = (TextView)convertView.findViewById(R.id.task_item_name);
             taskName.setText(task.getName());
+
+            CheckBox doneBox = (CheckBox)convertView.findViewById(R.id.task_item_done);
+            doneBox.setChecked(task.isDone());
 
             return convertView;
         }
