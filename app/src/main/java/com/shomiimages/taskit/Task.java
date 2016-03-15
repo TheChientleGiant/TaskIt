@@ -1,11 +1,12 @@
 package com.shomiimages.taskit;
 
+import java.io.Serializable;
 import java.util.Date;
 
 /**
  * Created by Justin Dean Chien on 3/12/2016.
  */
-public class Task {
+public class Task implements Serializable{
     private String mName;
     private Date mDueDate;
     private boolean mDone;
