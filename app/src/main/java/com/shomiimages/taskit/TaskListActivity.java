@@ -5,16 +5,20 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
 import android.widget.ListView;
 import android.widget.TextView;
 
 public class TaskListActivity extends AppCompatActivity {
+
+    private static final String TAG = "TaskLiskActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +36,12 @@ public class TaskListActivity extends AppCompatActivity {
 
         ListView listView = (ListView)findViewById(R.id.task_list);
         listView.setAdapter(new TaskAdapter(items));
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Log.d(TAG, "Position clicked is " + position);
+            }
+        });
     }
 
     private class TaskAdapter extends ArrayAdapter<Task>{
