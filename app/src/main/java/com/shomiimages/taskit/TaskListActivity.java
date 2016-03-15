@@ -11,6 +11,7 @@ import android.view.MenuItem;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 
 public class TaskListActivity extends AppCompatActivity {
 
@@ -39,6 +40,8 @@ public class TaskListActivity extends AppCompatActivity {
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
             convertView = super.getView(position, convertView, parent);
+            TextView taskName = (TextView)convertView.findViewById(R.id.task_item_name);
+            taskName.setText("Hello World!");
 
             return convertView;
         }
